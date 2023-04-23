@@ -1,4 +1,6 @@
 import re
+
+
 class Link:
     def __init__(self, blue_text, title, url):
         self.blue_text = blue_text
@@ -9,4 +11,3 @@ class Link:
 
     def __hash__(self):
         return hash(self.url)
-

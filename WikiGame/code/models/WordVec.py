@@ -1,13 +1,15 @@
 from scipy import spatial
+from WikiGame.code.models.ModelBase import ModelBase
 
 
-class WordVec:
+class WordVec(ModelBase):
     def __init__(self, word_vectors):
         """
         Initializes a new WordVec instance with a given dictionary of word vectors.
 
         :param word_vectors: A dictionary of word vectors.
         """
+        super().__init__()
         self.word_vecs = word_vectors
 
     def _find_average_word_vec(self, word_list):
