@@ -12,12 +12,12 @@ class AlgorithmBase(ABC):
         self.origin = origin
         self.destination = destination
         self.model = model
-        self.path = list(origin)
+        self.path = list()
         self.cur = origin
         self.MAX_LINKS = 100
 
     @abstractmethod
-    def play(self, cur, path):
+    def play(self, path):
         """
         Plays the Wiki Game and updates the path.
         """

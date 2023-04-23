@@ -29,13 +29,13 @@ class WikiGame:
         play_game() plays the Wiki Game and returns the path taken and the number of links clicked.
         """
         if self.algorithm.lower() == "greedy":
-            algorithm = Greedy(self.origin, self.destination, self.model, self.path)
+            algorithm = Greedy(self.origin, self.destination, self.model)
         elif self.algorithm.lower() == "backtrack":
-            algorithm = Backtrack(self.origin, self.destination, self.model, self.path)
+            algorithm = Backtrack(self.origin, self.destination, self.model)
         else:
             raise ValueError("Invalid algorithm. Please enter a valid algorithm.")
 
-        path = algorithm.play(self.origin, self.path)
+        self.path = algorithm.play(self.path)
 
         return self.path, len(self.path)
 
@@ -47,11 +47,11 @@ class WikiGame:
         validGame() checks if the game is valid.
         """
         try:
-            requests.get(origin)
+            valid_link(origin)
         except requests.exceptions.RequestException:
             raise ValueError("Origin URL is not a valid Wikipedia page")
 
         try:
-            requests.get(destination)
+            valid_link(destination)
         except requests.exceptions.RequestException:
             raise ValueError("Destination URL is not a valid Wikipedia page")
