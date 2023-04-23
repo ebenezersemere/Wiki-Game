@@ -29,6 +29,13 @@ class WordVec(ModelBase):
         :param comparison_document: The comparison document.
         :param n: The number of closest documents to return.
         :return: The n closest documents to the comparison document.
+        
+        Example:
+        a = WordVec(embeddings)
+        documents = ["hi cat dog", "child son", "son", "child", "doc2 mom dad","trees are cool", "haha", "house","home", "Unfortunately no. This is a federally funded program and thus only US citizens and permanent residents are elligible to apply."]
+        comp = "son"
+        a.get_closest(documents,comp,4) 
+        Output: ['son', 'child son', 'doc2 mom dad', 'child']
         """
         def sim(vec1, vec2):
             return 1 - spatial.distance.cosine(vec1, vec2)
