@@ -33,12 +33,13 @@ class WordVec(ModelBase):
         def sim(vec1, vec2):
             return 1 - spatial.distance.cosine(vec1, vec2)
 
-        comparison_vec = self._find_average_word_vec(comparison_document)
+        comparison_vec = self._find_average_word_vec(comparison_document.split())
 
         doc_vec = {}
         for doc in documents:
             doc_word_list = doc.split()
             doc_vec[doc] = self._find_average_word_vec(doc_word_list)
+        #print(doc_vec)
 
-        return sorted(documents, key=lambda doc: sim(doc_vec[doc], comparison_vec))[:n]
+        return sorted(documents, key=lambda doc: sim(doc_vec[doc], comparison_vec), reverse=True)[:n]
 
