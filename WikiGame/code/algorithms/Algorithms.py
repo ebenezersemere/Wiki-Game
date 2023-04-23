@@ -1,16 +1,15 @@
-"""
-Functions to be used in algorithms.
-"""
-import requests
 import re
+import requests
 
-# get the links from a given page
-def find_hyperlinks(title):
+
+########################################################################################################################
+
+def find_hyperlinks(page_name):
     # Set up the API request parameters
     url = 'https://en.wikipedia.org/w/api.php'
     params = {
         'action': 'query',
-        'titles': title,
+        'titles': page_name,
         'prop': 'links',
         'pllimit': 'max',
         'format': 'json'
@@ -28,13 +27,15 @@ def find_hyperlinks(title):
             for link in page['links']:
                 links.append(link['title'])
     except KeyError:
-        print(f"KeyError: No links found for: {title}")
+        print(f"KeyError: No links found for: {page_name}")
         return []
 
     # Print the resulting list of links
     return clean_list(links)
 
-# clean the list of links
+
+########################################################################################################################
+
 def clean_list(links):
     clean = []
 
@@ -51,4 +52,4 @@ def clean_list(links):
 
     return clean
 
-# print(find_hyperlinks('Python (programming language)'))
+########################################################################################################################
