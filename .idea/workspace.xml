@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea1a510-a3fe-47f0-a941-da8a867b1e6a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1ea1a510-a3fe-47f0-a941-da8a867b1e6a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +39,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "reset",
+    "git-widget-placeholder": "Rebasing reset",
     "last_opened_file_path": "/Users/ebenezersemere/Workspace/Pomona/Natural Language Processing/Final Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -54,11 +52,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WikiGame" />
+      <recent name="$PROJECT_DIR$/Data" />
       <recent name="$PROJECT_DIR$/WikiGame/code/api" />
       <recent name="$PROJECT_DIR$/WikiGame/code/game" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/WikiGame" />
-      <recent name="$PROJECT_DIR$/WikiGame/data" />
     </key>
   </component>
   <component name="RunManager">
