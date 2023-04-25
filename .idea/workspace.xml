@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea1a510-a3fe-47f0-a941-da8a867b1e6a" name="Changes" comment="" />
+    <list default="true" id="1ea1a510-a3fe-47f0-a941-da8a867b1e6a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wiki-Game" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/code/algorithms/Greedy.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/code/algorithms/Greedy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/code/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/code/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/code/game/WikiGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/code/game/WikiGame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/code/models/WordVec.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/code/models/WordVec.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,11 +60,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WikiGame/data" />
       <recent name="$PROJECT_DIR$/WikiGame" />
       <recent name="$PROJECT_DIR$/Data" />
       <recent name="$PROJECT_DIR$/WikiGame/code/api" />
       <recent name="$PROJECT_DIR$/WikiGame/code/game" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">

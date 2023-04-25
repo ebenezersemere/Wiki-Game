@@ -21,7 +21,7 @@ class WikiGame:
         self.destination = destination
         self.algorithm = algorithm
         self.model = model
-        self.path = list()
+        self.path = list([origin])
         self.MAX_LINKS = 50
 
     def play_game(self):
@@ -46,12 +46,5 @@ class WikiGame:
         """
         validGame() checks if the game is valid.
         """
-        try:
-            valid_link(origin)
-        except requests.exceptions.RequestException:
-            raise ValueError("Origin URL is not a valid Wikipedia page")
+        return valid_link(origin) and valid_link(destination)
 
-        try:
-            valid_link(destination)
-        except requests.exceptions.RequestException:
-            raise ValueError("Destination URL is not a valid Wikipedia page")

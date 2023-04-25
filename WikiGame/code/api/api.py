@@ -31,7 +31,7 @@ def find_hyperlinks(page_name):
         return []
 
     # Print the resulting list of links
-    return clean_list(links)
+    return links
 
 
 ########################################################################################################################
@@ -103,4 +103,4 @@ def valid_link(link):
     return page_id != "-1"
 
 
-print(find_hyperlinks("Albert Einstein"))
+# print(find_hyperlinks("Albert Einstein"))
