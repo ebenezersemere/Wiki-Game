@@ -2,6 +2,7 @@
 This module contains the WikiGame class, which is the main class for the Wiki Game. It is responsible for
 playing the game and returning the path taken and the number of links clicked.
 """
+
 from WikiGame.code.algorithms.Greedy import *
 from WikiGame.code.algorithms.Backtrack import *
 import requests
@@ -28,6 +29,7 @@ class WikiGame:
         """
         play_game() plays the Wiki Game and returns the path taken and the number of links clicked.
         """
+
         if self.algorithm.lower() == "greedy":
             algorithm = Greedy(self.origin, self.destination, self.model)
         elif self.algorithm.lower() == "backtrack":
