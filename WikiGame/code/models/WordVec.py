@@ -1,13 +1,16 @@
 from scipy import spatial
 import nltk
+from WikiGame.code.models.ModelBase import ModelBase
 
-class WordVec:
+
+class WordVec(ModelBase):
     def __init__(self, word_vectors):
         """
         Initializes a new WordVec instance with a given dictionary of word vectors.
 
         :param word_vectors: A dictionary of word vectors.
         """
+
         nltk.download('stopwords')
         from nltk.corpus import stopwords
         self.word_vecs = word_vectors
@@ -25,6 +28,7 @@ class WordVec:
                 ret.append(word)
         return ret
 
+
     def _find_average_word_vec(self, word_list):
         word_vecs = []
         for word in set(word_list):
@@ -33,6 +37,11 @@ class WordVec:
             
             word_vecs.append(self.word_vecs[word])
 
+            if word in self.word_vecs:
+                word_vecs.append(self.word_vecs[word])
+
+        if len(word_vecs) == 0:
+            raise ValueError("Text contains no words in vocabulary")
         return sum(word_vecs)/len(word_vecs)
 
     def get_closest(self, documents, comparison_document, n):
