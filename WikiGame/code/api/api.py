@@ -102,3 +102,5 @@ def valid_link(link):
     page_id = list(data["query"]["pages"].keys())[0]
     return page_id != "-1"
 
+
+print(find_hyperlinks("Albert Einstein"))
