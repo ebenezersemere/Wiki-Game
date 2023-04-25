@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ea1a510-a3fe-47f0-a941-da8a867b1e6a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Final Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WikiGame/code/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/code/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +100,7 @@
       <workItem from="1682295573745" duration="4381000" />
       <workItem from="1682303889670" duration="5841000" />
       <workItem from="1682383663952" duration="1544000" />
-      <workItem from="1682385211988" duration="2244000" />
+      <workItem from="1682385211988" duration="3423000" />
     </task>
     <servers />
   </component>
