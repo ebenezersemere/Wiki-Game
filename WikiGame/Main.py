@@ -24,7 +24,7 @@ if __name__ == "__main__":
     #     model = input("Enter the model: ")
 
     origin = "Dodgeball"
-    destination = "Sports"
+    destination = "Unit fraction"
     algorithm = "Greedy"
     model = "WordVec"
     

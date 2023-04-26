@@ -41,6 +41,11 @@ class WordVec:
         if len(word_vecs) == 0:
             raise ValueError("Text contains no words in vocabulary")
         return sum(word_vecs) / len(word_vecs)
+    
+    def count_vectorizable_documents(self, documents):
+        cleaned = [self._split_and_clean(doc) for doc in documents]
+        non_empty = [x for x in cleaned if len(x) >0]
+        return len(non_empty)
 
     def get_closest(self, documents, comparison_document, n):
         """

@@ -15,7 +15,6 @@ class Greedy(AlgorithmBase):
             path = "data/glove.pickle"
             with open(path, "rb") as f:
                 pickle_file = pickle.load(f)
-            print("hi2")
             self.model = WordVec(pickle_file)
             
 
@@ -27,6 +26,8 @@ class Greedy(AlgorithmBase):
         seen = set()
 
         while True:
+            print()
+            print("At",cur,"-->")
             hyperlinks = find_hyperlinks(cur)
 
             # base case
@@ -40,18 +41,29 @@ class Greedy(AlgorithmBase):
                 return path
 
             # find the top n closest hyperlinks
-            closest = self.model.get_closest(hyperlinks, self.destination, 10)
+            closest_n = self.model.get_closest(hyperlinks, self.destination, 50)
 
-            print(closest)
-
+            print(closest_n[:10])
+            
+    
+            closest = None
             # avoid cycles - find the first hyperlink that we haven't seen before
-            for candidate in closest:
+            for candidate in closest_n:
                 if candidate not in seen and valid_link(candidate):
-                    closest = candidate
-                    break
-
+                    hyperlinks = find_hyperlinks(candidate)
+                    if self.model.count_vectorizable_documents(hyperlinks) > 0:
+                        closest = candidate
+                        break
+                    else:
+                        seen.add(candidate)
+                    
+            if closest is None:
+                raise ValueError("No unseen links could be found")
+                
+                
             seen.add(closest)
             path.append(closest)
+            print(seen)
 
 
             cur = closest
