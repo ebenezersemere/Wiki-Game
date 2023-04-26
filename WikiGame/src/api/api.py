@@ -1,6 +1,6 @@
 import re
 import requests
-
+from bs4 import BeautifulSoup
 
 ########################################################################################################################
 
@@ -32,6 +32,29 @@ def find_hyperlinks(page_name):
 
     # Print the resulting list of links
     return links
+
+def get_page_contents(page_name):
+    # Set up the API request parameters
+    url = 'https://en.wikipedia.org/w/api.php'
+    params = {
+        'action': 'query',
+        'titles': page_name,
+        'prop': 'extracts',
+        'exintro': True,
+        'format': 'json'
+    }
+
+    # Send the API request and parse the response
+    response = requests.get(url, params=params)
+    data = response.json()['query']['pages']
+    key = list(data.keys())[0]
+    html = data[key]['extract']
+    
+    soup = BeautifulSoup(html, 'html.parser')
+    text = soup.get_text()
+    #['217291']['extract']
+    
+    return text #['217291']['extract']217291
 
 
 ########################################################################################################################
