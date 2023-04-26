@@ -1,7 +1,8 @@
-from WikiGame.code.algorithms.AlgorithmBase import AlgorithmBase
-from WikiGame.code.api.api import *
-from WikiGame.code.models.WordVec import *
+from src.algorithms.AlgorithmBase import AlgorithmBase
+from src.api.api import *
+from src.models.WordVec import *
 import pickle
+import os
 
 ########################################################################################################################
 
@@ -11,10 +12,12 @@ class Greedy(AlgorithmBase):
         super().__init__(origin, destination, model)
 
         if model == "WordVec":
-            path = "/Users/ebenezersemere/Workspace/Pomona/Natural Language Processing/Final Project/WikiGame/data/glove.pickle"
+            path = "data/glove.pickle"
             with open(path, "rb") as f:
                 pickle_file = pickle.load(f)
+            print("hi2")
             self.model = WordVec(pickle_file)
+            
 
         else:
             raise ValueError("Invalid model. Please enter a valid model.")

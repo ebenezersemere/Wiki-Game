@@ -1,5 +1,5 @@
-from WikiGame.code.api.api import *
-from WikiGame.code.game.WikiGame import *
+from src.api.api import *
+from src.game.wiki_game import *
 
 if __name__ == "__main__":
 
@@ -27,6 +27,7 @@ if __name__ == "__main__":
     destination = "Sports"
     algorithm = "Greedy"
     model = "WordVec"
+    
 
     game = WikiGame(origin, destination, algorithm, model)
     path = game.play_game()

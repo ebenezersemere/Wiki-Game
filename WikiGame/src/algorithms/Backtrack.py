@@ -1,4 +1,4 @@
-from WikiGame.code.algorithms.AlgorithmBase import AlgorithmBase
+from src.algorithms.AlgorithmBase import AlgorithmBase
 
 ########################################################################################################################
 
