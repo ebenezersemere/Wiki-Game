@@ -9,11 +9,10 @@ class WordVec:
 
         :param word_vectors: A dictionary of word vectors.
         """
-
         nltk.download('stopwords')
-        # from nltk.corpus import stopwords
+        from nltk.corpus import stopwords
         self.word_vecs = word_vectors
-        self.stop_words = set()#set(stopwords.words('english'))
+        self.stop_words = set()  # set(stopwords.words('english'))
 
     def _split_and_clean(self, document):
         ret = []
@@ -35,11 +34,6 @@ class WordVec:
 
             word_vecs.append(self.word_vecs[word])
 
-            if word in self.word_vecs:
-                word_vecs.append(self.word_vecs[word])
-
-        if len(word_vecs) == 0:
-            raise ValueError("Text contains no words in vocabulary")
         return sum(word_vecs) / len(word_vecs)
 
     def get_closest(self, documents, comparison_document, n):
@@ -79,4 +73,5 @@ class WordVec:
 
         in_vocab_doc = doc_vecs.keys()
 
-        return sorted(in_vocab_doc, key=lambda doc: sim(doc_vecs[doc], comparison_vec), reverse=True)[:n]
+        ret = sorted(in_vocab_doc, key=lambda doc: sim(doc_vecs[doc], comparison_vec), reverse=True)[:n]
+        return ret

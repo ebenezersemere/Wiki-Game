@@ -3,7 +3,6 @@ This module contains the WikiGame class, which is the main class for the Wiki Ga
 playing the game and returning the path taken and the number of links clicked.
 """
 from WikiGame.code.algorithms.Greedy import *
-from WikiGame.code.algorithms.Backtrack import *
 import requests
 
 ########################################################################################################################
@@ -30,8 +29,6 @@ class WikiGame:
         """
         if self.algorithm.lower() == "greedy":
             algorithm = Greedy(self.origin, self.destination, self.model)
-        elif self.algorithm.lower() == "backtrack":
-            algorithm = Backtrack(self.origin, self.destination, self.model)
         else:
             raise ValueError("Invalid algorithm. Please enter a valid algorithm.")
 
