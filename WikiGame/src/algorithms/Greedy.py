@@ -16,7 +16,7 @@ class Greedy(AlgorithmBase):
         self.seen = set()
 
         if model == "WordVec":
-            path = "data/glove.pickle"
+            path = "data/2MGloVe.pickle"
             with open(path, "rb") as f:
                 pickle_file = pickle.load(f)
             self.model = WordVec(pickle_file)
@@ -52,7 +52,7 @@ class Greedy(AlgorithmBase):
 
         while True:
             print()
-            print("At",cur,"-->")
+            print(cur,"-->")
             hyperlinks = find_hyperlinks(cur)
 
             # base case

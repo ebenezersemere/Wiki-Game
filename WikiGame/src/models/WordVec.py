@@ -21,8 +21,8 @@ class WordVec:
 
             if word not in self.word_vecs:
                 word = word.lower()
-            if word not in self.word_vecs:
-                return []
+            #if word not in self.word_vecs:
+            #    return []
             if word in self.word_vecs and word not in self.stop_words:
                 ret.append(word)
         return ret
@@ -83,5 +83,8 @@ class WordVec:
             raise ValueError("No document vectors could be computed")
 
         in_vocab_doc = doc_vecs.keys()
+        
+        ret = [(d, sim(doc_vecs[d], comparison_vec)) for d in in_vocab_doc]
+        return sorted(ret, key=lambda x: x[1], reverse=True)[:n]
 
-        return sorted(in_vocab_doc, key=lambda doc: sim(doc_vecs[doc], comparison_vec), reverse=True)[:n]
+        #return sorted(in_vocab_doc, key=lambda doc: sim(doc_vecs[doc], comparison_vec), reverse=True)[:n]
