@@ -66,6 +66,9 @@ class WordVec:
         def sim(vec1, vec2):
             return 1 - spatial.distance.cosine(vec1, vec2)
 
+        if comparison_document in documents:
+            return [comparison_document]
+
         # Compute comparison vector
         comp_words_clean = self._split_and_clean(comparison_document)
         if len(comp_words_clean) == 0:
@@ -79,9 +82,11 @@ class WordVec:
             if len(clean_split_doc) > 0:
                 doc_vecs[doc] = self._find_average_word_vec(clean_split_doc)
 
+
         if len(doc_vecs) == 0:
             raise ValueError("No document vectors could be computed")
 
         in_vocab_doc = doc_vecs.keys()
+
 
         return sorted(in_vocab_doc, key=lambda doc: sim(doc_vecs[doc], comparison_vec), reverse=True)[:n]
