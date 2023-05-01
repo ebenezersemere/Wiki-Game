@@ -1,11 +1,9 @@
-from src.api.api import *
-from src.game.wiki_game import *
+from WikiGame.src import *
 
 if __name__ == "__main__":
-
     # origin = input("Enter the origin page: ")
     # while not valid_link(origin):
-    #     print("Invalid link. Please enter a valid Wikipedia topic.")
+    #     print("Invalid link. P®lease enter a valid Wikipedia topic.")
     #     origin = input("Enter the origin page: ")
     #
     # destination = input("Enter the destination page: ")
@@ -23,13 +21,13 @@ if __name__ == "__main__":
     #     print("Invalid model. Please enter 'WordVec'.")
     #     model = input("Enter the model: ")
 
-    origin = "Dodgeball"
-    destination = "Unit fraction"
+    origin = "Computer science"
+    destination = "Rabbit"
     algorithm = "Greedy"
     model = "WordVec"
-    
-
+    #
     game = WikiGame(origin, destination, algorithm, model)
     path = game.play_game()
 
     print(f"Path taken: {path}")
+

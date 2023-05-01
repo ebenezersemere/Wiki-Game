@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 ########################################################################################################################
 
+
 def find_hyperlinks(page_name):
     # Set up the API request parameters
     url = 'https://en.wikipedia.org/w/api.php'
