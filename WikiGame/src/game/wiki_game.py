@@ -35,6 +35,7 @@ class WikiGame:
 
         self.origin = origin
         self.destination = destination
+        self.destination_page = get_page_contents(destination)
         self.algorithm = algorithm
         self.model = model
         self.path = list([origin])
@@ -53,7 +54,7 @@ class WikiGame:
             raise ValueError("Invalid algorithm. Please enter a valid algorithm.")
             
         """
-        algorithm =  self.algorithm(self.origin, self.destination,self.model)
+        algorithm =  self.algorithm(self.origin, self.destination,self.model, self.destination_page)
 
         if self.valid_game(self.origin, self.destination):
             self.path = algorithm.play(self.path)

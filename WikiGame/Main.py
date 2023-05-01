@@ -36,7 +36,7 @@ if __name__ == "__main__":
     # print(get_closest(clean_list(l), "Religious text", 10))
 
     origin = "Computer science"
-    destination = "Time"
+    destination = "Satisfiability modulo theories"
     algorithm = Greedy
     #model = "WordVec"
     
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     pickle_path = ("/Users/ebenezersemere/Workspace/Student/Pomona"
                    "/Natural Language Processing/Final Project/WikiGame/data/glove.pickle")
 
-    pickle_path = "/Users/reneau-cardoso/projects/Wiki-Game/WikiGame/data/glove.pickle"
+    pickle_path = "/Users/reneau-cardoso/projects/Wiki-Game/WikiGame/data/2Mglove.pickle"
 
     with open(pickle_path, 'rb') as f:
         data = pickle.load(f)

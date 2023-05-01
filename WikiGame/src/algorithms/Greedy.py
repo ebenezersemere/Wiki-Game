@@ -24,10 +24,11 @@ import os
 
 
 class Greedy:
-    def __init__(self, origin, destination, model):
+    def __init__(self, origin, destination, model, destination_page):
         self.blacklist = []
         self.origin = origin
         self.destination = destination
+        self.destination_page = destination_page
         self.seen = set()
         self.MAX_LINKS = 50
 
@@ -44,7 +45,7 @@ class Greedy:
 
         def get_next_page(hyperlinks):
             hyperlinks = remove_blacklisted(hyperlinks)
-            closest_n = self.model.get_closest(hyperlinks, self.destination, 1000)
+            closest_n = self.model.get_closest(hyperlinks, self.destination, 1000, self.destination_page)
             print(closest_n[:10])
             for candidate_and_sim in closest_n:
                 # cand, sim = candidate_and_sim
