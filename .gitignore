@@ -1,0 +1,4 @@
+*.DS_Store
+__pycache__/
+WikiGame/src/models/top_50000.pickle
+*.ipynb
