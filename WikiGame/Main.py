@@ -1,4 +1,4 @@
-from WikiGame.src import *
+from src import *
 
 if __name__ == "__main__":
     # origin = input("Enter the origin page: ")

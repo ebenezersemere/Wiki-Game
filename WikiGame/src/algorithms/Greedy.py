@@ -1,8 +1,8 @@
-from WikiGame.src.api.api import *
-from WikiGame.src.models.WordVec import *
+from src.api.api import *
+from src.models.WordVec import *
 import pickle
 import os
-from WikiGame.src.models.WordVec import *
+from src.models.WordVec import *
 
 
 ########################################################################################################################

@@ -2,11 +2,11 @@
 This module contains the WikiGame class, which is the main class for the Wiki Game. It is responsible for
 playing the game and returning the path taken and the number of links clicked.
 """
-from WikiGame.src.algorithms.Greedy import *
-from WikiGame.src.algorithms.Backtrack import *
+from src.algorithms.Greedy import *
+from src.algorithms.Backtrack import *
 import requests
 
-from WikiGame.src.api.api import valid_link
+from src.api.api import valid_link
 
 
 ########################################################################################################################
