@@ -5,25 +5,29 @@ from bs4 import BeautifulSoup
 ########################################################################################################################
 
 
-def is_redirect_page(page_title):
-    # Make a request to the Wikipedia API to get the page content
+import wikipedia
+
+
+import requests
+
+import requests
+
+import requests
+
+import requests
+
+def is_redirect_page(title):
     params = {
-        'action': 'query',
-        'titles': page_title,
-        'prop': 'info',
-        'inprop': 'redirects',
-        'format': 'json'
+        "action": "query",
+        "format": "json",
+        "titles": title,
+        "prop": "info",
+        "inprop": "redirect"
     }
-    response = requests.get('https://en.wikipedia.org/w/api.php', params=params).json()
-
-    # Check if the page is a redirect by examining the redirects property
-    pages = response['query']['pages']
-    for page_id in pages:
-        redirects = pages[page_id].get('redirects')
-        if redirects is not None:
-            return True
-
-    return False
+    response = requests.get("https://en.wikipedia.org/w/api.php", params=params)
+    data = response.json()
+    page = next(iter(data["query"]["pages"].values()))
+    return "redirect" in page
 
 
 def find_hyperlinks(page_name):
@@ -66,6 +70,8 @@ def find_hyperlinks(page_name):
 
     # Print the resulting list of links
     return links
+
+
 #
 #
 # def find_hyperlinks(page_name):
@@ -113,12 +119,12 @@ def get_page_contents(page_name):
     data = response.json()['query']['pages']
     key = list(data.keys())[0]
     html = data[key]['extract']
-    
+
     soup = BeautifulSoup(html, 'html.parser')
     text = soup.get_text()
-    #['217291']['extract']
-    
-    return text #['217291']['extract']217291
+    # ['217291']['extract']
+
+    return text  # ['217291']['extract']217291
 
 
 ########################################################################################################################
@@ -162,6 +168,7 @@ def get_closest(hyperlinks, destination, model):
 
         return link[i][0]
 
+
 ########################################################################################################################
 
 
@@ -188,6 +195,5 @@ def valid_link(link):
     # Check if the page exists
     page_id = list(data["query"]["pages"].keys())[0]
     return page_id != "-1"
-
 
 # print(find_hyperlinks("Albert Einstein"))

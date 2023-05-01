@@ -54,6 +54,6 @@ class WikiGame:
         """
         return (valid_link(origin)
                 and valid_link(destination)
-                and len(find_hyperlinks(origin)) != 1
-                and len(find_hyperlinks(destination)) != 1)
+                and not is_redirect_page(origin)
+                and not is_redirect_page(destination))
 

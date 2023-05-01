@@ -31,6 +31,7 @@ class Greedy:
             return [h for h in hyperlinks if not any(phrase in h for phrase in self.blacklist)]
 
         # avoid cycles - find the first hyperlink that we haven't seen before
+
         def get_next_page(hyperlinks):
             hyperlinks = remove_blacklisted(hyperlinks)
             closest_n = self.model.get_closest(hyperlinks, self.destination, 100)
@@ -40,10 +41,17 @@ class Greedy:
                 cand = candidate_and_sim
 
                 if len(closest_n) == 1 or cand not in self.seen and valid_link(cand):
+                    if is_redirect_page(cand) and find_hyperlinks(cand)[0] not in self.seen:
+                        self.seen.add(cand)
+                        print("Chose", find_hyperlinks(cand)[0])
+                        return find_hyperlinks(cand)[0]
+
                     if self.model.count_vectorizable_documents(hyperlinks) > 0:
                         self.seen.add(cand)
+                        print("Chose", cand)
                         return cand
             return None
+
 
         cur = self.origin
 
@@ -63,9 +71,12 @@ class Greedy:
                 return path
 
             next_page = get_next_page(hyperlinks)
+
             if not next_page:
                 raise RuntimeError("Next page could not be found")
             path.append(next_page)
             cur = next_page
+
+
 
 ########################################################################################################################

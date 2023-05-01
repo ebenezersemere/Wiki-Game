@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ea1a510-a3fe-47f0-a941-da8a867b1e6a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/src/algorithms/Greedy.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/src/algorithms/Greedy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WikiGame/src/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/src/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/src/game/wiki_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/src/game/wiki_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiGame/src/models/WordVec.py" beforeDir="false" afterPath="$PROJECT_DIR$/WikiGame/src/models/WordVec.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +79,7 @@
       <recent name="$PROJECT_DIR$/WikiGame/code/game" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Final Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -146,6 +151,9 @@
     <configuration name="api" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
       <option name="SDK_NAME" value="Python 3.9" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WikiGame/src/api" />
@@ -196,6 +204,7 @@
       <workItem from="1682888866211" duration="7676000" />
       <workItem from="1682910622350" duration="209000" />
       <workItem from="1682910851657" duration="55000" />
+      <workItem from="1682910983125" duration="3026000" />
     </task>
     <servers />
   </component>
@@ -217,11 +226,12 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Final_Project$WordVec.coverage" NAME="WordVec Coverage Results" MODIFIED="1682892279862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame/src/models" />
+    <SUITE FILE_PATH="coverage/Final_Project$Main.coverage" NAME="Main Coverage Results" MODIFIED="1682913686547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame" />
+    <SUITE FILE_PATH="coverage/Final_Project$algorithms.coverage" NAME="algorithms Coverage Results" MODIFIED="1681958296062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame/code/algorithms" />
     <SUITE FILE_PATH="coverage/Final_Project$api_calls.coverage" NAME="api_calls Coverage Results" MODIFIED="1681951340793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame/code/algorithms" />
     <SUITE FILE_PATH="coverage/Final_Project$HyperLinks.coverage" NAME="HyperLinks Coverage Results" MODIFIED="1681950100410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame/code/game" />
-    <SUITE FILE_PATH="coverage/Final_Project$WordVec.coverage" NAME="WordVec Coverage Results" MODIFIED="1682892279862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame/src/models" />
-    <SUITE FILE_PATH="coverage/Final_Project$algorithms.coverage" NAME="algorithms Coverage Results" MODIFIED="1681958296062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame/code/algorithms" />
     <SUITE FILE_PATH="coverage/Final_Project$test.coverage" NAME="test Coverage Results" MODIFIED="1682891328197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame/src/models" />
-    <SUITE FILE_PATH="coverage/Final_Project$Main.coverage" NAME="Main Coverage Results" MODIFIED="1682910290087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame" />
+    <SUITE FILE_PATH="coverage/Final_Project$Greedy.coverage" NAME="Greedy Coverage Results" MODIFIED="1682912058734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WikiGame/src/algorithms" />
   </component>
 </project>
