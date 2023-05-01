@@ -5,16 +5,6 @@ from bs4 import BeautifulSoup
 ########################################################################################################################
 
 
-import wikipedia
-
-
-import requests
-
-import requests
-
-import requests
-
-import requests
 
 def is_redirect_page(title):
     params = {

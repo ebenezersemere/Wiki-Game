@@ -1,8 +1,23 @@
-from src.api.api import *
-from src.models.WordVec import *
+
+
+try:
+    from src.api.api import *
+    from src.models.WordVec import *
+    from src.models.WordVec import *
+except Exception:
+    pass
+
+try:
+    from WikiGame.src.api.api import *
+    from WikiGame.src.models.WordVec import *
+    from WikiGame.src.models.WordVec import *
+except Exception:
+    pass
+
+
 import pickle
 import os
-from src.models.WordVec import *
+
 
 
 ########################################################################################################################

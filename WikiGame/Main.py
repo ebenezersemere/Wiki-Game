@@ -1,4 +1,15 @@
-from src import *
+
+try:
+    from src import *
+except Exception:
+    pass
+
+try:
+    from WikiGame.src import *
+except Exception:
+    pass
+
+
 
 if __name__ == "__main__":
     # origin = input("Enter the origin page: ")
