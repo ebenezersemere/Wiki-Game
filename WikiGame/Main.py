@@ -1,4 +1,15 @@
-from WikiGame.src import *
+
+try:
+    from src import *
+except Exception:
+    pass
+
+try:
+    from WikiGame.src import *
+except Exception:
+    pass
+
+
 
 if __name__ == "__main__":
     # origin = input("Enter the origin page: ")
@@ -25,9 +36,20 @@ if __name__ == "__main__":
     # print(get_closest(clean_list(l), "Religious text", 10))
 
     origin = "Computer science"
-    destination = "Time"
-    algorithm = "Greedy"
-    model = "WordVec"
+    destination = "Satisfiability modulo theories"
+    algorithm = Greedy
+    #model = "WordVec"
+    
+    # load the model
+    pickle_path = ("/Users/ebenezersemere/Workspace/Student/Pomona"
+                   "/Natural Language Processing/Final Project/WikiGame/data/glove.pickle")
+
+    pickle_path = "/Users/reneau-cardoso/projects/Wiki-Game/WikiGame/data/2Mglove.pickle"
+
+    with open(pickle_path, 'rb') as f:
+        data = pickle.load(f)
+        
+    model = WordVec(data)
 
     game = WikiGame(origin, destination, algorithm, model)
     path = game.play_game()

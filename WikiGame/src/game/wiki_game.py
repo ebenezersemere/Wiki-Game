@@ -2,11 +2,24 @@
 This module contains the WikiGame class, which is the main class for the Wiki Game. It is responsible for
 playing the game and returning the path taken and the number of links clicked.
 """
-from WikiGame.src.algorithms.Greedy import *
-from WikiGame.src.algorithms.Backtrack import *
-import requests
 
-from WikiGame.src.api.api import valid_link
+
+try:
+    from src.algorithms.Greedy import *
+    from src.algorithms.Backtrack import *
+    from src.api.api import valid_link
+except Exception:
+    pass
+
+try:
+    from WikiGame.src.algorithms.Greedy import *
+    from  WikiGame.src.algorithms.Backtrack import *
+    from  WikiGame.src.api.api import valid_link
+except Exception:
+    pass
+
+
+import requests
 
 
 ########################################################################################################################
@@ -22,6 +35,7 @@ class WikiGame:
 
         self.origin = origin
         self.destination = destination
+        self.destination_page = get_page_contents(destination)
         self.algorithm = algorithm
         self.model = model
         self.path = list([origin])
@@ -31,12 +45,16 @@ class WikiGame:
         """
         play_game() plays the Wiki Game and returns the path taken and the number of links clicked.
         """
+        """
         if self.algorithm.lower() == "greedy":
             algorithm = Greedy(self.origin, self.destination)
         elif self.algorithm.lower() == "backtrack":
             algorithm = Backtrack(self.origin, self.destination)
         else:
             raise ValueError("Invalid algorithm. Please enter a valid algorithm.")
+            
+        """
+        algorithm =  self.algorithm(self.origin, self.destination,self.model, self.destination_page)
 
         if self.valid_game(self.origin, self.destination):
             self.path = algorithm.play(self.path)

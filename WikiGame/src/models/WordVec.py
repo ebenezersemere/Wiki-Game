@@ -15,15 +15,20 @@ class WordVec:
         self.word_vecs = word_vectors
         self.stop_words = set()  # set(stopwords.words('english'))
 
-    def _split_and_clean(self, document):
+    def _split_and_clean(self, document, exclude_documents_with_OOV_words=True):
         ret = []
         for word in document.split():
-
+            # If upper case not in vocab, then try lowercasing
             if word not in self.word_vecs:
                 word = word.lower()
-            if word not in self.word_vecs:
-                return []
-            if word in self.word_vecs and word not in self.stop_words:
+            
+            if exclude_documents_with_OOV_words:
+                # if at least one word is not in vocab, don't return any words
+                if word not in self.word_vecs:
+                    return []
+        
+            # filter stop words
+            if word not in self.stop_words and word in self.word_vecs:
                 ret.append(word)
         return ret
 
@@ -47,11 +52,12 @@ class WordVec:
         non_empty = [x for x in cleaned if len(x) > 0]
         return len(non_empty)
 
-    def get_closest(self, documents, comparison_document, n):
+    def get_closest(self, documents, comparison_document, n, comparison_document_page=""):
         """
         Finds the n closest documents to a given comparison document based on their similarity to it.
         In our use case, each document will be the title of a wiki article.
-        :param comparison_document: The comparison document.
+        :param documents: A list of strings.
+        :param comparison_document: a string.
         :param n: The number of closest documents to return.
         :return: The n closest documents to the comparison document.
 
@@ -71,6 +77,11 @@ class WordVec:
 
         # Compute comparison vector
         comp_words_clean = self._split_and_clean(comparison_document)
+        
+        if len(comp_words_clean) == 0:
+            comp_words_clean = self._split_and_clean(comparison_document +" "+ comparison_document_page,
+                                                     exclude_documents_with_OOV_words= False)
+        
         if len(comp_words_clean) == 0:
             raise ValueError("Comparison document only contains out of vocab words")
         comparison_vec = self._find_average_word_vec(comp_words_clean)

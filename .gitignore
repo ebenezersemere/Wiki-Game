@@ -1,0 +1,7 @@
+*.DS_Store
+__pycache__/
+WikiGame/src/models/top_50000.pickle
+*.ipynb
+2MGloVe.pickle
+glove1000k.pickle
+WikiGame/data/1Mglove.pickle

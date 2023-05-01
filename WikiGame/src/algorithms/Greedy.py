@@ -1,29 +1,40 @@
-from WikiGame.src.api.api import *
-from WikiGame.src.models.WordVec import *
+
+
+try:
+    from src.api.api import *
+    from src.models.WordVec import *
+    from src.models.WordVec import *
+except Exception:
+    pass
+
+try:
+    from WikiGame.src.api.api import *
+    from WikiGame.src.models.WordVec import *
+    from WikiGame.src.models.WordVec import *
+except Exception:
+    pass
+
+
 import pickle
 import os
-from WikiGame.src.models.WordVec import *
+
 
 
 ########################################################################################################################
 
 
 class Greedy:
-    def __init__(self, origin, destination):
+    def __init__(self, origin, destination, model, destination_page):
         self.blacklist = []
         self.origin = origin
         self.destination = destination
+        self.destination_page = destination_page
         self.seen = set()
         self.MAX_LINKS = 50
 
-        # load the model
-        pickle_path = ("/Users/ebenezersemere/Workspace/Student/Pomona"
-                       "/Natural Language Processing/Final Project/WikiGame/data/glove.pickle")
+        
 
-        with open(pickle_path, 'rb') as f:
-            data = pickle.load(f)
-
-        self.model = WordVec(data)
+        self.model = model
 
     def play(self, path):
 
@@ -34,7 +45,7 @@ class Greedy:
 
         def get_next_page(hyperlinks):
             hyperlinks = remove_blacklisted(hyperlinks)
-            closest_n = self.model.get_closest(hyperlinks, self.destination, 1000)
+            closest_n = self.model.get_closest(hyperlinks, self.destination, 1000, self.destination_page)
             print(closest_n[:10])
             for candidate_and_sim in closest_n:
                 # cand, sim = candidate_and_sim
