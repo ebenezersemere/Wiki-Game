@@ -51,7 +51,8 @@ class WordVec:
         """
         Finds the n closest documents to a given comparison document based on their similarity to it.
         In our use case, each document will be the title of a wiki article.
-        :param comparison_document: The comparison document.
+        :param documents: A list of strings.
+        :param comparison_document: a string.
         :param n: The number of closest documents to return.
         :return: The n closest documents to the comparison document.
 
