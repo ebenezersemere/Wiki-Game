@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 
 ########################################################################################################################
 
-import requests
 
 def is_redirect_page(page_title):
     # Make a request to the Wikipedia API to get the page content
