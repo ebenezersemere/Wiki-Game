@@ -37,8 +37,19 @@ if __name__ == "__main__":
 
     origin = "Computer science"
     destination = "Time"
-    algorithm = "Greedy"
-    model = "WordVec"
+    algorithm = Greedy
+    #model = "WordVec"
+    
+    # load the model
+    pickle_path = ("/Users/ebenezersemere/Workspace/Student/Pomona"
+                   "/Natural Language Processing/Final Project/WikiGame/data/glove.pickle")
+
+    pickle_path = "/Users/reneau-cardoso/projects/Wiki-Game/WikiGame/data/glove.pickle"
+
+    with open(pickle_path, 'rb') as f:
+        data = pickle.load(f)
+        
+    model = WordVec(data)
 
     game = WikiGame(origin, destination, algorithm, model)
     path = game.play_game()

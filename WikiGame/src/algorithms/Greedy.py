@@ -24,21 +24,16 @@ import os
 
 
 class Greedy:
-    def __init__(self, origin, destination):
+    def __init__(self, origin, destination, model):
         self.blacklist = []
         self.origin = origin
         self.destination = destination
         self.seen = set()
         self.MAX_LINKS = 50
 
-        # load the model
-        pickle_path = ("/Users/ebenezersemere/Workspace/Student/Pomona"
-                       "/Natural Language Processing/Final Project/WikiGame/data/glove.pickle")
+        
 
-        with open(pickle_path, 'rb') as f:
-            data = pickle.load(f)
-
-        self.model = WordVec(data)
+        self.model = model
 
     def play(self, path):
 

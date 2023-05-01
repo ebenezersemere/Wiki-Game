@@ -44,12 +44,16 @@ class WikiGame:
         """
         play_game() plays the Wiki Game and returns the path taken and the number of links clicked.
         """
+        """
         if self.algorithm.lower() == "greedy":
             algorithm = Greedy(self.origin, self.destination)
         elif self.algorithm.lower() == "backtrack":
             algorithm = Backtrack(self.origin, self.destination)
         else:
             raise ValueError("Invalid algorithm. Please enter a valid algorithm.")
+            
+        """
+        algorithm =  self.algorithm(self.origin, self.destination,self.model)
 
         if self.valid_game(self.origin, self.destination):
             self.path = algorithm.play(self.path)
