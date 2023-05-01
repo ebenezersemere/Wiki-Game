@@ -33,13 +33,13 @@ class Greedy:
         # avoid cycles - find the first hyperlink that we haven't seen before
         def get_next_page(hyperlinks):
             hyperlinks = remove_blacklisted(hyperlinks)
-            closest_n = self.model.get_closest(hyperlinks, self.destination, 50)
+            closest_n = self.model.get_closest(hyperlinks, self.destination, 100)
             print(closest_n[:10])
             for candidate_and_sim in closest_n:
                 # cand, sim = candidate_and_sim
                 cand = candidate_and_sim
 
-                if cand not in self.seen and valid_link(cand):
+                if len(closest_n) == 1 or cand not in self.seen and valid_link(cand):
                     if self.model.count_vectorizable_documents(hyperlinks) > 0:
                         self.seen.add(cand)
                         return cand

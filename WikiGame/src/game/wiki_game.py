@@ -38,7 +38,10 @@ class WikiGame:
         else:
             raise ValueError("Invalid algorithm. Please enter a valid algorithm.")
 
-        self.path = algorithm.play(self.path)
+        if self.valid_game(self.origin, self.destination):
+            self.path = algorithm.play(self.path)
+        else:
+            raise ValueError("Invalid game. Please enter a valid start and end URL.")
 
         return self.path, len(self.path)
 
@@ -49,5 +52,8 @@ class WikiGame:
         """
         validGame() checks if the game is valid.
         """
-        return valid_link(origin) and valid_link(destination)
+        return (valid_link(origin)
+                and valid_link(destination)
+                and len(find_hyperlinks(origin)) != 1
+                and len(find_hyperlinks(destination)) != 1)
 

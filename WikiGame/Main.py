@@ -22,12 +22,16 @@ if __name__ == "__main__":
     #     model = input("Enter the model: ")
 
     origin = "Computer science"
-    destination = "Rabbit"
+    destination = "Phone"
     algorithm = "Greedy"
     model = "WordVec"
     #
-    game = WikiGame(origin, destination, algorithm, model)
-    path = game.play_game()
+    print('a')
+    print(is_redirect_page(origin))
+    print(is_redirect_page(destination))
+    print('b')
+    # game = WikiGame(origin, destination, algorithm, model)
+    # path = game.play_game()
 
-    print(f"Path taken: {path}")
+    # print(f"Path taken: {path}")
 
