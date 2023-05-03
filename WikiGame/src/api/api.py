@@ -20,6 +20,48 @@ def is_redirect_page(title):
     return "redirect" in page
 
 
+def find_hyperlinks_tuple(page_name):
+    # Set up the API request parameters
+    url = 'https://en.wikipedia.org/w/api.php'
+    params = {
+        'action': 'query',
+        'titles': page_name,
+        'prop': 'links',
+        'pllimit': 'max',
+        'format': 'json'
+    }
+
+    # Send the API request and parse the response
+    response = requests.get(url, params=params)
+    data = response.json()
+
+    # Extract the links from the API response
+    links = []
+
+    try:
+        # Continue making API requests until all links have been retrieved
+        while True:
+            for page in data['query']['pages'].values():
+                for link in page['links']:
+                    links.append((link['title'], link['*']))
+
+            # Check if there are more links to retrieve
+            if 'continue' not in data:
+                break
+
+            # Set the continue parameter to get the next batch of links
+            params['plcontinue'] = data['continue']['plcontinue']
+            response = requests.get(url, params=params)
+            data = response.json()
+
+    except KeyError:
+        print(f"KeyError: No links found for: {page_name}")
+        return []
+
+    # Print the resulting list of links
+    return links
+
+
 def find_hyperlinks(page_name):
     # Set up the API request parameters
     url = 'https://en.wikipedia.org/w/api.php'
