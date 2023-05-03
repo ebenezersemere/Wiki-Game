@@ -82,7 +82,7 @@ class Greedy:
                 return path
 
             next_page = get_next_page(hyperlinks)
-            if next_page == self.destination_page:
+            if next_page == self.destination:
                 path.append(self.destination)
                 return path
 
