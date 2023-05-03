@@ -82,12 +82,13 @@ class Greedy:
                 return path
 
             next_page = get_next_page(hyperlinks)
+            if next_page == self.destination_page:
+                path.append(self.destination)
+                return path
 
             if not next_page:
                 raise RuntimeError("Next page could not be found")
             path.append(next_page)
             cur = next_page
-
-
 
 ########################################################################################################################
