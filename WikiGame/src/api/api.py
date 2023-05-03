@@ -4,6 +4,17 @@ from bs4 import BeautifulSoup
 
 ########################################################################################################################
 
+def get_links(title):
+    # Replace spaces in title with underscores
+    title = title.replace(' ', '_')
+    # Make API request to get page content
+    url = f'https://en.wikipedia.org/w/api.php?action=parse&format=json&page={title}&prop=links'
+    response = requests.get(url).json()
+    # Extract links from API response
+    links = response['parse']['links']
+    # Create list of tuples containing anchor text and page titles
+    results = [(link['*'], link['title']) for link in links]
+    return results
 
 
 def is_redirect_page(title):

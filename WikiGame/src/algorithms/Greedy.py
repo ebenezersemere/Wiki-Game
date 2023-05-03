@@ -1,5 +1,3 @@
-
-
 try:
     from src.api.api import *
     from src.models.WordVec import *
@@ -14,10 +12,8 @@ try:
 except Exception:
     pass
 
-
 import pickle
 import os
-
 
 
 ########################################################################################################################
@@ -31,8 +27,6 @@ class Greedy:
         self.destination_page = destination_page
         self.seen = set()
         self.MAX_LINKS = 50
-
-        
 
         self.model = model
 
@@ -63,7 +57,6 @@ class Greedy:
                         return cand
             return None
 
-
         cur = self.origin
 
         while True:
@@ -72,7 +65,9 @@ class Greedy:
             hyperlinks = find_hyperlinks(cur)
 
             # base case
-            if self.destination in hyperlinks:
+            if self.destination in hyperlinks or cur == self.destination:
+                if cur == self.destination:
+                    return path
                 path.append(self.destination)
                 return path
 
@@ -87,7 +82,5 @@ class Greedy:
                 raise RuntimeError("Next page could not be found")
             path.append(next_page)
             cur = next_page
-
-
 
 ########################################################################################################################
