@@ -46,7 +46,7 @@ class Greedy:
         def get_next_page(hyperlinks):
             hyperlinks = remove_blacklisted(hyperlinks)
             closest_n = self.model.get_closest(hyperlinks, self.destination, 1000, self.destination_page)
-            print(closest_n[:10])
+            # print(closest_n[:10])
             for candidate_and_sim in closest_n:
                 # cand, sim = candidate_and_sim
                 cand = candidate_and_sim
@@ -54,12 +54,12 @@ class Greedy:
                 if len(closest_n) == 1 or cand not in self.seen and valid_link(cand):
                     if is_redirect_page(cand) and find_hyperlinks(cand)[0] not in self.seen:
                         self.seen.add(cand)
-                        print("Chose", find_hyperlinks(cand)[0])
+                        print("Chose: ", find_hyperlinks(cand)[0])
                         return find_hyperlinks(cand)[0]
 
                     if self.model.count_vectorizable_documents(hyperlinks) > 0:
                         self.seen.add(cand)
-                        print("Chose", cand)
+                        print("Chose: ", cand)
                         return cand
             return None
 
@@ -74,6 +74,7 @@ class Greedy:
             # base case
             if self.destination in hyperlinks:
                 path.append(self.destination)
+                print("Chose: ", self.destination)
                 return path
 
             # if we have reached the max number of links, return
@@ -83,6 +84,7 @@ class Greedy:
 
             next_page = get_next_page(hyperlinks)
             if next_page == self.destination:
+                print("Chose: ", self.destination)
                 path.append(self.destination)
                 return path
 

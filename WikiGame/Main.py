@@ -37,8 +37,8 @@ if __name__ == "__main__":
     if len(sys.argv) >= 3:
         arg1 = sys.argv[1]
         arg2 = ' '.join(sys.argv[2:])
-        print(f"arg1: {arg1}")
-        print(f"arg2: {arg2}")
+        print(f"Origin: {arg1}, Destination: {arg2}")
+        print(f"------------------------------------------------------------------------")
     else:
         raise ValueError('Invalid number of arguments. Usage: python script.py arg1 arg2')
 
@@ -66,52 +66,3 @@ if __name__ == "__main__":
     print()
     print(f"Path taken: {path}")
 
-    # print(find_hyperlinks("Computer science"))
-    #
-    # print(is_redirect_page("The Foot of Cupid"))
-    # print(find_hyperlinks("The Foot of Cupid"))
-    # print(find_hyperlinks("The Foot of Cupid"))
-    # print(f"Path taken: {path}")
-    #
-
-    # look at line 69 in wordvec.py
-    #
-    # import requests
-    #
-    # import requests
-    #
-    # import requests
-    #
-    # import requests
-    #
-    #
-    # def get_links_to_wikipedia_pages(title):
-    #     """
-    #     Get all hyperlinked text from a Wikipedia page that lead to another Wikipedia page, given its title.
-    #     """
-    #     url = f"https://en.wikipedia.org/w/api.php?action=parse&format=json&page={title}"
-    #     response = requests.get(url)
-    #     data = response.json()
-    #     links = []
-    #     if 'parse' in data:
-    #         if 'text' in data['parse']:
-    #             html_text = data['parse']['text']['*']
-    #             for i in range(html_text.count("<a href=")):
-    #                 start_link = html_text.find("<a href=")
-    #                 start_text = html_text.find(">", start_link) + 1
-    #                 end_text = html_text.find("</a>", start_text)
-    #                 link_text = html_text[start_text:end_text].strip()
-    #                 href_start = html_text.find("href=", start_link) + 6
-    #                 href_end = html_text.find('"', href_start)
-    #                 href = html_text[href_start:href_end]
-    #                 if href.startswith("/wiki/"):
-    #                     links.append(link_text)
-    #                 html_text = html_text[end_text:]
-    #     return links
-    #
-    #
-    # res = get_links_to_wikipedia_pages("Computer science")
-    # print(res)
-    # for t in res:
-    #     if t[0] != t[1]:
-    #         print(t)
