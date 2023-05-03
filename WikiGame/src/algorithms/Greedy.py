@@ -46,7 +46,7 @@ class Greedy:
         def get_next_page(hyperlinks):
             hyperlinks = remove_blacklisted(hyperlinks)
             closest_n = self.model.get_closest(hyperlinks, self.destination, 1000, self.destination_page)
-            # print(closest_n[:10])
+            print(f"Top 5 closest: {closest_n[:5]}")
             for candidate_and_sim in closest_n:
                 # cand, sim = candidate_and_sim
                 cand = candidate_and_sim
