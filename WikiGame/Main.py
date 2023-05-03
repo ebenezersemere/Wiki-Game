@@ -63,6 +63,7 @@ if __name__ == "__main__":
     game = WikiGame(origin, destination, algorithm, model)
     path = game.play_game()
 
+    print()
     print(f"Path taken: {path}")
 
     # print(find_hyperlinks("Computer science"))
