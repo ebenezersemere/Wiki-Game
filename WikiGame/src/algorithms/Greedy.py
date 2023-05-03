@@ -55,11 +55,13 @@ class Greedy:
                     if is_redirect_page(cand) and find_hyperlinks(cand)[0] not in self.seen:
                         self.seen.add(cand)
                         print("Chose: ", find_hyperlinks(cand)[0])
+                        print()
                         return find_hyperlinks(cand)[0]
 
                     if self.model.count_vectorizable_documents(hyperlinks) > 0:
                         self.seen.add(cand)
                         print("Chose: ", cand)
+                        print()
                         return cand
             return None
 
@@ -67,24 +69,26 @@ class Greedy:
         cur = self.origin
 
         while True:
-            print()
-            print("At", cur, "-->")
+            print("At:", cur, "-->")
             hyperlinks = find_hyperlinks(cur)
 
             # base case
             if self.destination in hyperlinks:
                 path.append(self.destination)
                 print("Chose: ", self.destination)
+                print()
                 return path
 
             # if we have reached the max number of links, return
             if len(path) > self.MAX_LINKS:
                 print("Max links reached")
+                print()
                 return path
 
             next_page = get_next_page(hyperlinks)
             if next_page == self.destination:
                 print("Chose: ", self.destination)
+                print()
                 path.append(self.destination)
                 return path
 

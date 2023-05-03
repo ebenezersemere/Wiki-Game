@@ -38,7 +38,8 @@ if __name__ == "__main__":
         arg1 = sys.argv[1]
         arg2 = ' '.join(sys.argv[2:])
         print(f"Origin: {arg1}, Destination: {arg2}")
-        print(f"------------------------------------------------------------------------")
+        banner_len = len(arg1) + len(arg2) + len("Origin: , Destination: ")
+        print(banner_len * "-")
     else:
         raise ValueError('Invalid number of arguments. Usage: python script.py arg1 arg2')
 
@@ -63,6 +64,5 @@ if __name__ == "__main__":
     game = WikiGame(origin, destination, algorithm, model)
     path = game.play_game()
 
-    print()
     print(f"Path taken: {path}")
 
