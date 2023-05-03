@@ -1,5 +1,4 @@
 from scipy import spatial
-import nltk
 
 
 class WordVec:
@@ -9,9 +8,6 @@ class WordVec:
 
         :param word_vectors: A dictionary of word vectors.
         """
-
-        # nltk.download('stopwords')
-        # from nltk.corpus import stopwords
         self.word_vecs = word_vectors
         self.stop_words = set()  # set(stopwords.words('english'))
 
